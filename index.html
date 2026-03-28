@@ -762,7 +762,7 @@
         <div class="flex flex-col items-center gap-6">
             <div class="flex items-center gap-2 text-gray-700 bg-accent/20 px-4 py-2 rounded-full border border-accent">
                 <span class="material-icons text-sm">mail</span>
-                <span class="font-bold text-[10px] uppercase tracking-widest">Sobre cerrado</span>
+                <span class="font-bold text-[10px] uppercase tracking-widest">Sobre</span>
             </div>
 
             <div class="w-16 h-px bg-gray-200 relative my-1">
@@ -1161,7 +1161,7 @@ function handleEnvelopeClick() {
             };
 
             try {
-                const response = await fetch("http://204.168.190.217:3000/api/invitacion/", {
+                const response = await fetch("/api/invitacion/", {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
@@ -1200,7 +1200,7 @@ function handleEnvelopeClick() {
 
             if (codigo) {
                 try {
-                    const response = await fetch(`http://204.168.190.217:3000/api/invitacion/verificar?cod=${codigo}`);
+                    const response = await fetch(`/api/invitacion/verificar?cod=${codigo}`);
                     const result = await response.json();
 
                     if (result.success && result.confirmado) {
